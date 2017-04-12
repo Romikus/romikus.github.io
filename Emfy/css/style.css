@@ -167,12 +167,6 @@ body {
   .main-menu__item:hover {
     color: #f56a6a; }
 
-.main-menu__dropdown {
-  display: none; }
-
-.main-menu__item:hover .main-menu__dropdown {
-  display: block; }
-
 .main-menu__link {
   display: block;
   padding: 15px 20px 15px 40px;
@@ -181,7 +175,8 @@ body {
   font-weight: bold;
   text-decoration: none;
   color: inherit;
-  border-bottom: 2px solid #dadfe1; }
+  border-bottom: 2px solid #dadfe1;
+  cursor: pointer; }
 
 @media (max-width: 767px) {
   .main-menu--nojs .main-menu__toggle {
@@ -191,6 +186,8 @@ body {
   .main-menu--opened .main-menu__list {
     display: block; }
   .main-menu--nojs .main-menu__list {
+    display: block; }
+  .main-menu--nojs .main-menu__dropdown {
     display: block; } }
 
 /* --------------- tablet ------------------ */
@@ -199,6 +196,8 @@ body {
     display: none; }
   .main-menu__item {
     cursor: pointer; }
+  .main-menu__item:hover .main-menu__dropdown {
+    display: block; }
   .main-menu__item--submenu .main-menu__link {
     position: relative; }
     .main-menu__item--submenu .main-menu__link::before {
@@ -249,6 +248,7 @@ body {
         flex-grow: 1; } }
 
 .page-nav {
+  position: relative;
   background: #f5f6f7; }
 
 .page-nav__logo {
@@ -256,17 +256,6 @@ body {
   padding: 20px 50px;
   text-align: center;
   border-bottom: 2px solid #dadfe1; }
-  .page-nav__logo::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 25px;
-    height: 24px;
-    background: url(../img/icon-phone.svg) no-repeat 0 0;
-    cursor: pointer;
-    transform: translateY(-50%); }
-  .page-nav__logo::before {
-    right: 20px; }
 
 .page-nav__logo-link {
   display: inline-block;
@@ -279,8 +268,17 @@ body {
     color: rgba(61, 68, 73, 0.5); }
 
 .page-nav__contacts {
-  display: none;
+  position: absolute;
+  top: 30px;
+  right: 20px;
   color: #3d4449; }
+
+.page-nav__phone {
+  font-size: 0;
+  line-height: 0; }
+
+.page-nav__phone-info {
+  display: none; }
 
 /* --------------- tablet ------------------ */
 @media (min-width: 768px) {
@@ -319,28 +317,24 @@ body {
       background: linear-gradient(to right, transparent, #dadfe1, transparent); }
   .page-nav__contacts {
     position: relative;
+    top: 0;
+    right: 0;
     display: block;
     margin-top: 15px;
     padding: 15px 20px;
     padding-left: 55px;
     background-color: #eff1f2; }
-    .page-nav__contacts::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 25px;
-      height: 24px;
-      background: url(../img/icon-phone.svg) no-repeat 0 0;
-      cursor: pointer;
-      transform: translateY(-50%); }
-    .page-nav__contacts::before {
-      left: 20px; }
   .page-nav__phone {
     font-size: 14px;
     line-height: 24px;
-    font-weight: bold; }
-  .page-nav__phone-info {
-    display: none; } }
+    font-weight: bold;
+    text-decoration: none;
+    color: #3d4449; }
+  .page-nav__icon-phone {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); } }
 
 /* --------------- desktop ------------------ */
 @media (min-width: 1200px) {
@@ -400,6 +394,9 @@ body {
   .product__description-item {
     font-size: 16px; } }
 
+.submenu--closed {
+  display: none; }
+
 .submenu__list {
   margin: 0;
   padding: 0;
@@ -418,6 +415,8 @@ body {
 
 /* --------------- tablet ------------------ */
 @media (min-width: 768px) {
+  .submenu {
+    display: none; }
   .submenu__link {
     padding: 10px 0 10px 20px;
     font-size: 14px;

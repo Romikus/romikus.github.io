@@ -49,7 +49,7 @@ for (var i = 0; i < scroll.length; i++) {
   const thumbPos = thumb[i].getBoundingClientRect();
   thumb[i].style.top = (-clearance)/factor + 'px';
 //  thumb[i].style.right = -(parseFloat(scrollPaddingRirht) + clearance)/factor + 'px';
-  thumb[i].style.right = -((thumbPos.right - thumbPos.right) + parseFloat(scrollPaddingRirht) + clearance)/factor + 'px';
+  thumb[i].style.right = -((scrollPos.right - thumbPos.right) + parseFloat(scrollPaddingRirht) + clearance)/factor + 'px';
 //  thumb[i].style.right = 0;
   
 }

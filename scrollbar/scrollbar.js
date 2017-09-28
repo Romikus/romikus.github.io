@@ -44,6 +44,6 @@ for (var i = 0; i < scroll.length; i++) {
     translateZ(${1 - 1/factor}px)
     translateZ(-2px)
   `;
-  thumb[i].style.top = (-(thumbHeight - clearance) - ((thumbHeight)/factor - (thumbHeight) )*0.5) + 'px';
-  thumb[i].style.right = -(0.5*thumb[i].clientWidth*(1/factor + 1) + (parseFloat(scrollPaddingRirht) + clearance)/factor ) + 'px';
+  thumb[i].style.top = (-clearance)/factor + 'px';
+  thumb[i].style.right = -(parseFloat(scrollPaddingRirht) + clearance)/factor + 'px';
 }
